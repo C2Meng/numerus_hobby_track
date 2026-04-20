@@ -50,17 +50,17 @@ Gaming – 4h\
 Drawing – 3h\
 Graphic Design – 2h
 
-4️ Weekly Time Scheduler
-Simple schedule generator
-Example:
+4️ Weekly Time Scheduler<br/>
+Simple schedule generator<br/>
+Example:<br/>
 
-Monday
-  Gaming - 1h
+Monday<br/>
+  Gaming - 1h<br/>
 
-Tuesday
-  Video Editing - 2h
+Tuesday<br/>
+  Video Editing - 2h<br/>
 
-Wednesday
+Wednesday<br/>
   Poster Design - 2h
 Simple algorithm:
     • Sort hobbies by priority
