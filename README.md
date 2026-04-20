@@ -18,7 +18,7 @@ Version Control
     Git
     GitHub
 
-Core Features\ 
+Core Features<br/>
 1️ Add Hobby
 User can create hobby.
 Example:
