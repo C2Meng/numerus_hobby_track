@@ -48,17 +48,17 @@ Video Editing – 6h\
 Poster Design – 5h\
 Gaming – 4h\
 Drawing – 3h\
-Graphic Design – 2h\
+Graphic Design – 2h
 
-4️ Weekly Time Scheduler\
-Simple schedule generator\
-Example:\
+4️ Weekly Time Scheduler
+Simple schedule generator
+Example:
 
-Monday\
-  Gaming - 1h\
+Monday
+  Gaming - 1h
 
-Tuesday\
-  Video Editing - 2h\
+Tuesday
+  Video Editing - 2h
 
 Wednesday
   Poster Design - 2h
