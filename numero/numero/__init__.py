@@ -1,0 +1,1 @@
+#numero is the administrative interface for the Numero project. It provides a web-based interface for managing and configuring the Numero system.

@@ -15,8 +15,8 @@ Frontend
 
 
 Version Control
-    Git
-    GitHub
+    • Git
+    • GitHub
 
 Core Features 
 1️ Add Hobby
@@ -55,13 +55,13 @@ Simple schedule generator.
 Example:
 
 Monday
-  Gaming - 1h
+Gaming - 1h
 
 Tuesday
-  Video Editing - 2h
+Video Editing - 2h
 
 Wednesday
-  Poster Design - 2h
+Poster Design - 2h
 Simple algorithm:
-    • Sort hobbies by priority
+• Sort hobbies by priority
 Fill available time slots
