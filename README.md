@@ -28,11 +28,12 @@ Have many hobbies, no time to do all.
 
 ## Core Features
 
-1. Create, update, or delete hobbies  
-2. List hobbies by priority  
-3. Allocate time to hobbies  
+1. Proper authentication and user account management system 
+2. Create, update, or delete hobbies  
+3. List hobbies by priority  
+4. Allocate time to hobbies  
    - Possible integration with calendar apps (Google Calendar, Microsoft Teams)  
-4. View schedule
+5. View schedule
 
 
 
