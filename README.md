@@ -22,7 +22,7 @@ Core Features<br/>
 2️. List Hobby by Priority <br>
 
 3️. Allocate Time to Hobby <br>
-possible integration with calendar apps such as google calendar or teams
+possible integration with calendar apps such as google calendar or teams <br>
 
 4. View Schedule <br>
 
