@@ -1,8 +1,8 @@
 # numerus_hobby_track
 
 ## Problem
-Have many hobbies, no time to do all.
-
+Have many hobbies, no time to do it all?
+Use numero to track your hobbies or even use it track your tasks
 ---
 
 ## Tech Stack
