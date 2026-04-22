@@ -22,6 +22,9 @@ Have many hobbies, no time to do all.
 - Git
 - GitHub
 
+###Frontend design
+- figma
+- sticth.io
 ---
 
 ## Core Features
