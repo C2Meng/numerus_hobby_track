@@ -1,31 +1,36 @@
 # numerus_hobby_track
-Problem: Have many hobby, no time to do all, how?
 
-Frontend
-    • Django Templates
-    • HTML
-    • CSS
-    •  JavaScript
+## Problem
+Have many hobbies, no time to do all.
 
-Backend
-    • Python
-    • Django
-    • SQLite 
+---
 
-Version Control
-    • Git
-    • GitHub
+## Tech Stack
 
-Core Features<br/>
-1️. Create, update, update or delete hobby <br>
+### Frontend
+- Django Templates
+- HTML
+- CSS
+- JavaScript
 
-2️. List Hobby by Priority <br>
+### Backend
+- Python
+- Django
+- SQLite
 
-3️. Allocate Time to Hobby <br>
-possible integration with calendar apps such as google calendar or teams <br>
+### Version Control
+- Git
+- GitHub
 
-4. View Schedule
+---
 
+## Core Features
+
+1. Create, update, or delete hobbies  
+2. List hobbies by priority  
+3. Allocate time to hobbies  
+   - Possible integration with calendar apps (Google Calendar, Microsoft Teams)  
+4. View schedule
 
 
 
