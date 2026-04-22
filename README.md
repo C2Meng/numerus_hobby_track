@@ -23,7 +23,7 @@ Have many hobbies, no time to do all.
 - GitHub
 
 ###Frontend design
-- figma
+- figma: [link](https://www.figma.com/design/RV6AzzzWncwvQweyuv3yms/Untitled?node-id=0-1&t=IPGmYQEfc7eLBsGP-1)
 - sticth.io
 ---
 
