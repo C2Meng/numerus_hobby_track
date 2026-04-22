@@ -24,6 +24,8 @@ Core Features<br/>
 3️. Allocate Time to Hobby <br>
 possible integration with calendar apps such as google calendar or teams <br>
 
-4. View Schedule <br>
+4. View Schedule
+
+
 
 
