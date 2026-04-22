@@ -8,10 +8,9 @@ Have many hobbies, no time to do all.
 ## Tech Stack
 
 ### Frontend
-- Django Templates
 - HTML
 - CSS
-- JavaScript
+
 
 ### Backend
 - Python
