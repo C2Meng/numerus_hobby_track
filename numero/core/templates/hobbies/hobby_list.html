@@ -1,0 +1,572 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@400;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#efeded",
+              "surface-container-low": "#f4f3f3",
+              "on-surface-variant": "#564240",
+              "surface-variant": "#e3e2e2",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ffb3af",
+              secondary: "#5e5e5c",
+              "surface-container-highest": "#e3e2e2",
+              "tertiary-fixed": "#ffdea5",
+              "primary-fixed": "#ffdad7",
+              "on-surface": "#1b1c1c",
+              "on-tertiary-container": "#e7bf75",
+              "outline-variant": "#ddc0be",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#e9c176",
+              "secondary-fixed-dim": "#c8c6c3",
+              primary: "#72181b",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#e1dfdc",
+              "on-tertiary-fixed-variant": "#5d4201",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3031",
+              "primary-container": "#912f2f",
+              "tertiary-container": "#694d0c",
+              "on-primary-container": "#ffb0ac",
+              "surface-tint": "#a23c3b",
+              error: "#ba1a1a",
+              "on-secondary-fixed": "#1b1c1a",
+              "on-primary-fixed-variant": "#832526",
+              outline: "#8a7170",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#261900",
+              "inverse-primary": "#ffb3af",
+              "surface-container-high": "#e9e8e8",
+              "surface-dim": "#dbdad9",
+              "on-secondary-container": "#636360",
+              "on-primary-fixed": "#410005",
+              tertiary: "#4e3700",
+              "surface-bright": "#faf9f9",
+              background: "#faf9f9",
+              surface: "#faf9f9",
+              "secondary-fixed": "#e4e2de",
+              "on-secondary-fixed-variant": "#474744",
+              "on-error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "stack-lg": "48px",
+              "inset-square": "24px",
+              "stack-md": "24px",
+              "margin-page": "32px",
+              "stack-sm": "8px",
+              gutter: "16px",
+              "inset-squish": "12px 20px",
+              unit: "8px",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              "headline-lg": ["Noto Serif"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Noto Serif"],
+              "headline-sm": ["Noto Serif"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": [
+                "28px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .parchment-grain {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md min-h-screen relative overflow-x-hidden"
+  >
+    <!-- Background Texture -->
+    <div class="fixed inset-0 pointer-events-none parchment-grain z-0"></div>
+    <!-- SideNavBar -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 border-r border-stone-200 dark:border-stone-800 bg-[#fcfaf7] dark:bg-stone-950 shadow-[4px_0_12px_rgba(50,47,46,0.05)] flex flex-col h-screen p-6 gap-8 z-50"
+    >
+      <div class="flex items-center gap-4">
+        <div
+          class="w-10 h-10 border-2 border-tertiary rounded-full overflow-hidden flex items-center justify-center"
+        >
+          <img
+            alt="The Medallion"
+            class="w-full h-full object-cover"
+            data-alt="close-up of a classical Roman marble bust in profile with dramatic lighting on a dark background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWJHTtx9mNr_TLpQij7pOTzk9Bs0YmZ2DOJPVfw4CWQFISqi8VO5YOZGFREk6l5Y6muT7zyv8Ik_04MKn3o8mmrHSGTNmlpdNSbppq9jUpnNMAdFTd7v6vurng_DK2dnORIpuGygJZ_EzJQ2agH6kNbpzv6appq4jTyX611N2CkrKC0SfUJkDll1tR8FJTO6G5bRXeCdu23TY3cb4Cn8zGU3BCVEp4exQaXEVr3GnkmT6SxcyqVEeuf0UUFI-Bh6wi_KZmUEdLUd4Z"
+          />
+        </div>
+        <div>
+          <h1
+            class="text-xl font-black uppercase text-[#912F2F] font-headline-sm"
+          >
+            Numero
+          </h1>
+          <p
+            class="text-xs tracking-widest text-stone-500 font-label-caps uppercase"
+          >
+            Legacy &amp; Discipline
+          </p>
+        </div>
+      </div>
+      <nav class="flex-1 space-y-2">
+        <a
+          class="flex items-center gap-4 px-4 py-3 text-[#912F2F] dark:text-red-500 bg-stone-100 dark:bg-stone-900 border-r-4 border-[#912F2F] transition-all duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_today"
+            >calendar_today</span
+          >
+          <span class="font-body-md">Fasti</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="architecture"
+            >architecture</span
+          >
+          <span class="font-body-md">Artes</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="query_stats"
+            >query_stats</span
+          >
+          <span class="font-body-md">Annales</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-body-md">Praesetia</span>
+        </a>
+      </nav>
+      <button
+        class="mt-auto w-full py-3 bg-primary text-on-primary font-label-caps uppercase tracking-widest shadow-md hover:opacity-90 active:scale-95 transition-all"
+      >
+        Incipere
+      </button>
+    </aside>
+    <!-- Main Content -->
+    <main class="pl-64 min-h-screen relative z-10">
+      <!-- TopAppBar -->
+      <header
+        class="sticky top-0 bg-[#fcfaf7] dark:bg-stone-950 border-b border-stone-200 dark:border-stone-800 shadow-sm flex justify-between items-center w-full px-8 h-16 z-40"
+      >
+        <div class="flex items-center gap-6">
+          <span
+            class="text-2xl font-bold tracking-widest uppercase text-[#912F2F] font-headline-md"
+            >Tabula Officiorum</span
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <div
+            class="flex items-center bg-stone-100 px-4 py-1.5 rounded-lg border border-stone-200"
+          >
+            <span
+              class="material-symbols-outlined text-stone-400 text-sm"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="bg-transparent border-none focus:ring-0 text-sm font-body-md text-stone-700 w-48"
+              placeholder="Search archives..."
+              type="text"
+            />
+          </div>
+          <div class="flex items-center gap-4">
+            <span
+              class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary transition-colors"
+              data-icon="notifications"
+              >notifications</span
+            >
+            <span
+              class="material-symbols-outlined text-stone-500 cursor-pointer hover:text-primary transition-colors"
+              data-icon="history_edu"
+              >history_edu</span
+            >
+          </div>
+        </div>
+      </header>
+      <!-- Canvas -->
+      <div class="max-w-6xl mx-auto px-margin-page py-stack-lg">
+        <!-- Header Section -->
+        <div
+          class="flex justify-between items-end mb-stack-lg border-b border-stone-200 pb-gutter"
+        >
+          <div>
+            <h2 class="font-headline-lg text-primary mb-2">Hobby Library</h2>
+            <p class="font-body-lg text-secondary max-w-lg">
+              Manage your sacred disciplines and monitor your progression toward
+              mastery.
+            </p>
+          </div>
+          <button
+            class="flex items-center gap-2 bg-primary text-white px-inset-squish rounded-lg shadow-lg hover:bg-primary-container transition-all group"
+          >
+            <span class="material-symbols-outlined" data-icon="add">add</span>
+            <span class="font-label-caps uppercase tracking-wider"
+              >Add Hobby</span
+            >
+          </button>
+        </div>
+        <!-- Priority Section: Primus -->
+        <section class="mb-stack-lg">
+          <div class="flex items-center gap-4 mb-stack-md">
+            <div class="h-px flex-1 bg-stone-200"></div>
+            <h3
+              class="font-label-caps uppercase text-stone-500 tracking-[0.3em] px-4"
+            >
+              Primus
+              <span class="text-primary-container opacity-50 ml-1"
+                >Priority</span
+              >
+            </h3>
+            <div class="h-px flex-1 bg-stone-200"></div>
+          </div>
+          <div class="grid grid-cols-1 gap-gutter">
+            <!-- Hobby Item 1 -->
+            <div
+              class="bg-surface border border-stone-200 hover:shadow-[0_8px_24px_rgba(50,47,46,0.08)] transition-all p-inset-square flex items-center group relative overflow-hidden"
+            >
+              <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+              <div
+                class="w-16 h-16 bg-stone-50 border border-stone-100 flex items-center justify-center mr-gutter rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-3xl"
+                  data-icon="brush"
+                  >brush</span
+                >
+              </div>
+              <div class="flex-1 grid grid-cols-12 gap-gutter items-center">
+                <div class="col-span-4">
+                  <h4 class="font-headline-sm text-on-surface">Oil Painting</h4>
+                  <p class="font-body-md text-stone-500">Fine Arts</p>
+                </div>
+                <div class="col-span-5">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-label-caps text-stone-400 uppercase"
+                      >Weekly Allocation</span
+                    >
+                    <span class="font-label-caps text-primary font-bold"
+                      >12 / 15 hrs</span
+                    >
+                  </div>
+                  <div
+                    class="h-2 bg-stone-100 w-full rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-tertiary-fixed-dim"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="col-span-3 flex justify-end gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button class="text-stone-400 hover:text-primary">
+                    <span class="material-symbols-outlined" data-icon="edit"
+                      >edit</span
+                    >
+                  </button>
+                  <button class="text-stone-400 hover:text-primary">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="more_vert"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Hobby Item 2 -->
+            <div
+              class="bg-surface border border-stone-200 hover:shadow-[0_8px_24px_rgba(50,47,46,0.08)] transition-all p-inset-square flex items-center group relative overflow-hidden"
+            >
+              <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+              <div
+                class="w-16 h-16 bg-stone-50 border border-stone-100 flex items-center justify-center mr-gutter rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-3xl"
+                  data-icon="fitness_center"
+                  >fitness_center</span
+                >
+              </div>
+              <div class="flex-1 grid grid-cols-12 gap-gutter items-center">
+                <div class="col-span-4">
+                  <h4 class="font-headline-sm text-on-surface">Calisthenics</h4>
+                  <p class="font-body-md text-stone-500">Physical Culture</p>
+                </div>
+                <div class="col-span-5">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-label-caps text-stone-400 uppercase"
+                      >Weekly Allocation</span
+                    >
+                    <span class="font-label-caps text-primary font-bold"
+                      >4 / 6 hrs</span
+                    >
+                  </div>
+                  <div
+                    class="h-2 bg-stone-100 w-full rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-tertiary-fixed-dim"
+                      style="width: 66%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="col-span-3 flex justify-end gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button class="text-stone-400 hover:text-primary">
+                    <span class="material-symbols-outlined" data-icon="edit"
+                      >edit</span
+                    >
+                  </button>
+                  <button class="text-stone-400 hover:text-primary">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="more_vert"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Priority Section: Secundus -->
+        <section>
+          <div class="flex items-center gap-4 mb-stack-md">
+            <div class="h-px flex-1 bg-stone-200"></div>
+            <h3
+              class="font-label-caps uppercase text-stone-500 tracking-[0.3em] px-4"
+            >
+              Secundus
+              <span class="text-primary-container opacity-50 ml-1"
+                >Priority</span
+              >
+            </h3>
+            <div class="h-px flex-1 bg-stone-200"></div>
+          </div>
+          <div class="grid grid-cols-1 gap-gutter">
+            <!-- Hobby Item 3 -->
+            <div
+              class="bg-surface border border-stone-200 hover:shadow-[0_8px_24px_rgba(50,47,46,0.08)] transition-all p-inset-square flex items-center group relative overflow-hidden"
+            >
+              <div class="absolute top-0 left-0 w-1 h-full bg-stone-300"></div>
+              <div
+                class="w-16 h-16 bg-stone-50 border border-stone-100 flex items-center justify-center mr-gutter rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-stone-400 text-3xl"
+                  data-icon="piano"
+                  >piano</span
+                >
+              </div>
+              <div class="flex-1 grid grid-cols-12 gap-gutter items-center">
+                <div class="col-span-4">
+                  <h4 class="font-headline-sm text-on-surface">
+                    Classical Piano
+                  </h4>
+                  <p class="font-body-md text-stone-500">Music Performance</p>
+                </div>
+                <div class="col-span-5">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-label-caps text-stone-400 uppercase"
+                      >Weekly Allocation</span
+                    >
+                    <span class="font-label-caps text-secondary font-bold"
+                      >2 / 8 hrs</span
+                    >
+                  </div>
+                  <div
+                    class="h-2 bg-stone-100 w-full rounded-full overflow-hidden"
+                  >
+                    <div class="h-full bg-stone-300" style="width: 25%"></div>
+                  </div>
+                </div>
+                <div
+                  class="col-span-3 flex justify-end gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button class="text-stone-400 hover:text-primary">
+                    <span class="material-symbols-outlined" data-icon="edit"
+                      >edit</span
+                    >
+                  </button>
+                  <button class="text-stone-400 hover:text-primary">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="more_vert"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Hobby Item 4 -->
+            <div
+              class="bg-surface border border-stone-200 hover:shadow-[0_8px_24px_rgba(50,47,46,0.08)] transition-all p-inset-square flex items-center group relative overflow-hidden"
+            >
+              <div class="absolute top-0 left-0 w-1 h-full bg-stone-300"></div>
+              <div
+                class="w-16 h-16 bg-stone-50 border border-stone-100 flex items-center justify-center mr-gutter rounded-lg"
+              >
+                <span
+                  class="material-symbols-outlined text-stone-400 text-3xl"
+                  data-icon="translate"
+                  >translate</span
+                >
+              </div>
+              <div class="flex-1 grid grid-cols-12 gap-gutter items-center">
+                <div class="col-span-4">
+                  <h4 class="font-headline-sm text-on-surface">
+                    Latin Translation
+                  </h4>
+                  <p class="font-body-md text-stone-500">Philology</p>
+                </div>
+                <div class="col-span-5">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-label-caps text-stone-400 uppercase"
+                      >Weekly Allocation</span
+                    >
+                    <span class="font-label-caps text-secondary font-bold"
+                      >5 / 5 hrs</span
+                    >
+                  </div>
+                  <div
+                    class="h-2 bg-stone-100 w-full rounded-full overflow-hidden"
+                  >
+                    <div class="h-full bg-primary" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div
+                  class="col-span-3 flex justify-end gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button class="text-stone-400 hover:text-primary">
+                    <span class="material-symbols-outlined" data-icon="edit"
+                      >edit</span
+                    >
+                  </button>
+                  <button class="text-stone-400 hover:text-primary">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="more_vert"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Featured Achievement Pillar -->
+      <div class="fixed right-8 bottom-8 flex flex-col items-center gap-2">
+        <div
+          class="w-12 h-64 bg-stone-100 border border-stone-200 rounded-full flex flex-col items-center justify-end p-1 shadow-inner"
+        >
+          <div
+            class="w-full bg-gradient-to-t from-primary to-primary-container rounded-full"
+            style="height: 75%"
+          ></div>
+        </div>
+        <span
+          class="material-symbols-outlined text-primary"
+          data-icon="workspace_premium"
+          data-weight="fill"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >workspace_premium</span
+        >
+        <p
+          class="font-label-caps text-[10px] text-stone-400 uppercase vertical-rl rotate-180"
+        >
+          Virtus Level
+        </p>
+      </div>
+    </main>
+    <!-- Footer Quote -->
+    <footer class="pl-64 py-stack-md text-center border-t border-stone-200">
+      <p class="font-headline-sm italic text-stone-400">
+        "Nulla dies sine linea."
+      </p>
+      <p class="font-label-caps text-stone-300 uppercase mt-2">
+        Not a day without a line.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Numero - Hobby Editor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#efeded",
+              "surface-container-low": "#f4f3f3",
+              "on-surface-variant": "#564240",
+              "surface-variant": "#e3e2e2",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ffb3af",
+              secondary: "#5e5e5c",
+              "surface-container-highest": "#e3e2e2",
+              "tertiary-fixed": "#ffdea5",
+              "primary-fixed": "#ffdad7",
+              "on-surface": "#1b1c1c",
+              "on-tertiary-container": "#e7bf75",
+              "outline-variant": "#ddc0be",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#e9c176",
+              "secondary-fixed-dim": "#c8c6c3",
+              primary: "#72181b",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#e1dfdc",
+              "on-tertiary-fixed-variant": "#5d4201",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3031",
+              "primary-container": "#912f2f",
+              "tertiary-container": "#694d0c",
+              "on-primary-container": "#ffb0ac",
+              "surface-tint": "#a23c3b",
+              error: "#ba1a1a",
+              "on-secondary-fixed": "#1b1c1a",
+              "on-primary-fixed-variant": "#832526",
+              outline: "#8a7170",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#261900",
+              "inverse-primary": "#ffb3af",
+              "surface-container-high": "#e9e8e8",
+              "surface-dim": "#dbdad9",
+              "on-secondary-container": "#636360",
+              "on-primary-fixed": "#410005",
+              tertiary: "#4e3700",
+              "surface-bright": "#faf9f9",
+              background: "#faf9f9",
+              surface: "#faf9f9",
+              "secondary-fixed": "#e4e2de",
+              "on-secondary-fixed-variant": "#474744",
+              "on-error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "stack-lg": "48px",
+              "inset-square": "24px",
+              "stack-md": "24px",
+              "margin-page": "32px",
+              "stack-sm": "8px",
+              gutter: "16px",
+              "inset-squish": "12px 20px",
+              unit: "8px",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              "headline-lg": ["Noto Serif"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Noto Serif"],
+              "headline-sm": ["Noto Serif"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": [
+                "28px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .grain-texture {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAYK9UWWYqxcR7QkHsG_zLlORhyGRzSEc46Iz2wp_jyPU32wucEzoVzraTiBLoW3sCtpOXUiNoZGrrmxCotPyhaB5p8hlfxp-gEyUNqXQT4lUlH5JWpGwKU9O7pTA41HfEKaAxEJSRCzJkP89BtTxgFa-djlcpo_hQEpxIPAu3rCOPe4l94ZC-PsX2mF42Tgm2Xvh0EfhQ9_lg71kEV8JCuKPcjilXrmUrVKaZetDTrLDiyc3wewXZODT5S3NZDvtMkdR53dldJ17cs);
+      }
+      .pillar-gradient {
+        background: linear-gradient(to bottom, #72181b 0%, #912f2f 100%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface grain-texture min-h-screen"
+  >
+    <!-- Top Navigation Bar (Shared Component Pattern) -->
+    <header
+      class="bg-[#fcfaf7] dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-serif shadow-sm border-b border-stone-200 dark:border-stone-800 fixed top-0 left-0 w-full h-16 z-50"
+    >
+      <div class="flex justify-between items-center w-full px-8 h-16">
+        <div class="flex items-center gap-4">
+          <span
+            class="material-symbols-outlined text-stone-500 cursor-pointer hover:bg-stone-100 p-2 rounded transition-colors"
+            >close</span
+          >
+          <span
+            class="text-2xl font-bold tracking-widest uppercase text-[#912F2F] dark:text-red-600"
+            >Numero</span
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="hidden md:flex gap-8">
+            <span
+              class="text-stone-500 dark:text-stone-400 font-body-md hover:text-[#912F2F] cursor-pointer transition-colors"
+              >Fasti</span
+            >
+            <span
+              class="text-stone-500 dark:text-stone-400 font-body-md hover:text-[#912F2F] cursor-pointer transition-colors"
+              >Artes</span
+            >
+            <span
+              class="text-stone-500 dark:text-stone-400 font-body-md hover:text-[#912F2F] cursor-pointer transition-colors"
+              >Annales</span
+            >
+          </div>
+          <div class="flex gap-4 items-center">
+            <span
+              class="material-symbols-outlined text-stone-500"
+              data-icon="history_edu"
+              >history_edu</span
+            >
+            <span
+              class="material-symbols-outlined text-stone-500"
+              data-icon="notifications"
+              >notifications</span
+            >
+            <div
+              class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden"
+            >
+              <img
+                alt="User Medallion"
+                class="w-full h-full object-cover"
+                data-alt="Close up portrait of a distinguished man with a short beard in soft natural studio lighting with warm tones"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxq3hFXR5_LJKpyHxGKV0ySW-KM6YrUHdcv8kQ91Ngt_XT1pt2eGeSha79N_zHYmeQa_CqyIP_J9BB8iygg71KXTBMHfrML8dQwvYjuMpDx0X-48Y-tH4F0BZQrUbflssy1RTOCl5Bs6L7gVoMoW-rk3wsQy4aHoUVTZrl3zgR-EgMcy2ftzWPquQF3Kh80kI97f8VV3avUF_Vek5UOeGJ96JAduOAxoGmwceP-m6PpG_g1hnEtCZ1BBo528ILAifHAGKWnIcphj4v"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pt-24 pb-12 px-margin-page max-w-4xl mx-auto">
+      <!-- Header Section -->
+      <div class="mb-stack-lg text-center">
+        <p
+          class="font-label-caps text-label-caps text-primary mb-2 tracking-[0.2em] uppercase"
+        >
+          Nova Disciplina
+        </p>
+        <h1 class="font-headline-lg text-headline-lg text-on-surface">
+          Architect Your Legacy
+        </h1>
+        <div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
+      </div>
+      <form class="space-y-stack-lg">
+        <!-- Asymmetric Bento-style Input Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <!-- Main Name & Category Block -->
+          <div
+            class="md:col-span-8 bg-surface-bright border border-surface-variant p-inset-square shadow-[4px_4px_12px_rgba(50,47,46,0.05)]"
+          >
+            <div class="space-y-stack-md">
+              <div>
+                <label
+                  class="font-label-caps text-label-caps text-on-surface-variant mb-unit block uppercase"
+                  >Identity of the Pursuit</label
+                >
+                <input
+                  class="w-full bg-transparent border-b border-surface-variant focus:border-primary focus:ring-0 text-headline-sm font-headline-sm px-0 py-2 placeholder:text-stone-300 transition-colors duration-300"
+                  placeholder="e.g. Architectural Sketching"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  class="font-label-caps text-label-caps text-on-surface-variant mb-unit block uppercase"
+                  >Classification</label
+                >
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <button
+                    class="px-inset-squish py-1 bg-surface-container text-on-surface-variant font-label-caps border border-transparent hover:border-primary transition-all rounded"
+                    type="button"
+                  >
+                    Intellect
+                  </button>
+                  <button
+                    class="px-inset-squish py-1 bg-primary text-white font-label-caps border border-primary rounded"
+                    type="button"
+                  >
+                    Artistic
+                  </button>
+                  <button
+                    class="px-inset-squish py-1 bg-surface-container text-on-surface-variant font-label-caps border border-transparent hover:border-primary transition-all rounded"
+                    type="button"
+                  >
+                    Physical
+                  </button>
+                  <button
+                    class="px-inset-squish py-1 bg-surface-container text-on-surface-variant font-label-caps border border-transparent hover:border-primary transition-all rounded"
+                    type="button"
+                  >
+                    Stoic
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Priority Pillar Block -->
+          <div
+            class="md:col-span-4 bg-surface-bright border border-surface-variant p-inset-square shadow-[4px_4px_12px_rgba(50,47,46,0.05)] flex flex-col justify-between"
+          >
+            <div>
+              <label
+                class="font-label-caps text-label-caps text-on-surface-variant mb-unit block uppercase"
+                >Order of Importance</label
+              >
+              <p class="font-body-md text-stone-500 text-sm leading-tight">
+                High priority pursuits receive greater visual weight in the
+                Fasti.
+              </p>
+            </div>
+            <div class="flex items-end justify-between h-32 gap-3 mt-4">
+              <div
+                class="flex-1 bg-surface-container h-1/3 hover:h-1/2 transition-all cursor-pointer rounded-t border-b-2 border-primary"
+              ></div>
+              <div
+                class="flex-1 bg-surface-container h-2/3 hover:h-3/4 transition-all cursor-pointer rounded-t border-b-2 border-primary"
+              ></div>
+              <div
+                class="flex-1 pillar-gradient h-full cursor-pointer rounded-t shadow-lg"
+              ></div>
+            </div>
+            <p
+              class="text-center font-label-caps text-primary mt-2 uppercase tracking-wider"
+            >
+              Supreme
+            </p>
+          </div>
+          <!-- Weekly Target - Horizontal Inlaid Element -->
+          <div
+            class="md:col-span-12 bg-surface-container-low border border-surface-variant p-inset-square"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between gap-gutter"
+            >
+              <div class="max-w-md">
+                <h3 class="font-headline-sm text-on-surface mb-1">
+                  Temporal Commitment
+                </h3>
+                <p class="font-body-md text-stone-500">
+                  Define the hours per week required to master this discipline.
+                </p>
+              </div>
+              <div class="flex items-center gap-4">
+                <button
+                  class="w-10 h-10 border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined">remove</span>
+                </button>
+                <div class="text-center min-w-[80px]">
+                  <span class="text-4xl font-headline-md text-primary">12</span>
+                  <span
+                    class="block font-label-caps text-on-surface-variant uppercase"
+                    >Hours</span
+                  >
+                </div>
+                <button
+                  class="w-10 h-10 border border-outline flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+            </div>
+            <!-- Custom Progress Track (Architectural Frieze) -->
+            <div
+              class="mt-8 relative h-1.5 bg-surface-variant rounded-full overflow-hidden"
+            >
+              <div
+                class="absolute left-0 top-0 h-full w-[60%] bg-[#e7bf75]"
+              ></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 font-label-caps text-[10px] text-stone-400 uppercase tracking-widest"
+            >
+              <span>Initiate (2h)</span>
+              <span>Disciple (10h)</span>
+              <span>Master (20h)</span>
+            </div>
+          </div>
+          <!-- Visual Anchor / Image Card -->
+          <div
+            class="md:col-span-12 relative h-48 overflow-hidden border border-surface-variant group"
+          >
+            <img
+              alt="Hobby Context"
+              class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              data-alt="Elegant close-up of high quality paint brushes resting on a textured canvas with subtle strokes of oil paint in a sunlit studio"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEaKgMY53KFqxvJblbFtVFnRnpT5LgfmV2UAuj8IyUamYtKDzKkowmMxIzrR4D1099RT3kHF6Ktsb_K_cGOMMp63-HhidbnjwCBT2ZOUJo-Yuoz-2tlP4G57O-Wj6yHJYQawFGECBmapnQ-_fKgcOarLegw5suiB6fqCpsvqkE8YOx2WmXunPEU4yV5eqiePBYVIdn8kar_ZbO0VcPd4naZamnKFBS_jy2bN-60eG9TkbGEPPed8WBYbgwMcQNwuM8fMIzdSfAx57o"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-stone-900/10 group-hover:bg-transparent transition-colors"
+            >
+              <div
+                class="bg-surface-bright/90 backdrop-blur-sm px-inset-squish py-unit border border-outline-variant flex items-center gap-2 cursor-pointer hover:bg-white transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="add_a_photo"
+                  >add_a_photo</span
+                >
+                <span class="font-label-caps text-on-surface uppercase"
+                  >Evoke a Visual Identity</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form Actions -->
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-gutter pt-stack-md border-t border-surface-variant"
+        >
+          <button
+            class="w-full md:w-auto px-12 py-4 border border-outline text-on-surface font-label-caps uppercase tracking-widest hover:bg-stone-50 transition-colors order-2 md:order-1"
+            type="button"
+          >
+            Abandon
+          </button>
+          <button
+            class="w-full md:w-64 py-4 bg-primary text-white font-headline-sm flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:bg-primary-container transition-all active:opacity-80 duration-150 order-1 md:order-2"
+            type="submit"
+          >
+            <span
+              class="material-symbols-outlined"
+              data-icon="verified"
+              data-weight="fill"
+              >verified</span
+            >
+            Consecrate Hobby
+          </button>
+        </div>
+      </form>
+    </main>
+    <!-- Side Navigation Placeholder for Mobile Consistency (Hidden per Shell Rules if considered sub-page, but here for UI demonstration) -->
+    <footer
+      class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-surface-variant z-50 px-gutter h-16 flex items-center justify-around"
+    >
+      <span
+        class="material-symbols-outlined text-primary"
+        data-icon="calendar_today"
+        >calendar_today</span
+      >
+      <span
+        class="material-symbols-outlined text-stone-400"
+        data-icon="architecture"
+        >architecture</span
+      >
+      <div
+        class="bg-primary w-12 h-12 -mt-10 flex items-center justify-center rounded-full shadow-lg border-4 border-white"
+      >
+        <span class="material-symbols-outlined text-white" data-icon="add"
+          >add</span
+        >
+      </div>
+      <span
+        class="material-symbols-outlined text-stone-400"
+        data-icon="query_stats"
+        >query_stats</span
+      >
+      <span
+        class="material-symbols-outlined text-stone-400"
+        data-icon="settings"
+        >settings</span
+      >
+    </footer>
+  </body>
+</html>

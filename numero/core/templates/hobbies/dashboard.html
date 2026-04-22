@@ -1,0 +1,682 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#efeded",
+              "surface-container-low": "#f4f3f3",
+              "on-surface-variant": "#564240",
+              "surface-variant": "#e3e2e2",
+              "inverse-on-surface": "#f2f0f0",
+              "primary-fixed-dim": "#ffb3af",
+              secondary: "#5e5e5c",
+              "surface-container-highest": "#e3e2e2",
+              "tertiary-fixed": "#ffdea5",
+              "primary-fixed": "#ffdad7",
+              "on-surface": "#1b1c1c",
+              "on-tertiary-container": "#e7bf75",
+              "outline-variant": "#ddc0be",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#e9c176",
+              "secondary-fixed-dim": "#c8c6c3",
+              primary: "#72181b",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#e1dfdc",
+              "on-tertiary-fixed-variant": "#5d4201",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3031",
+              "primary-container": "#912f2f",
+              "tertiary-container": "#694d0c",
+              "on-primary-container": "#ffb0ac",
+              "surface-tint": "#a23c3b",
+              error: "#ba1a1a",
+              "on-secondary-fixed": "#1b1c1a",
+              "on-primary-fixed-variant": "#832526",
+              outline: "#8a7170",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed": "#261900",
+              "inverse-primary": "#ffb3af",
+              "surface-container-high": "#e9e8e8",
+              "surface-dim": "#dbdad9",
+              "on-secondary-container": "#636360",
+              "on-primary-fixed": "#410005",
+              tertiary: "#4e3700",
+              "surface-bright": "#faf9f9",
+              background: "#faf9f9",
+              surface: "#faf9f9",
+              "secondary-fixed": "#e4e2de",
+              "on-secondary-fixed-variant": "#474744",
+              "on-error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "stack-lg": "48px",
+              "inset-square": "24px",
+              "stack-md": "24px",
+              "margin-page": "32px",
+              "stack-sm": "8px",
+              gutter: "16px",
+              "inset-squish": "12px 20px",
+              unit: "8px",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              "headline-lg": ["Noto Serif"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Noto Serif"],
+              "headline-sm": ["Noto Serif"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": [
+                "28px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .bg-marble {
+        background-color: #faf9f9;
+        background-image: radial-gradient(
+          circle at 2px 2px,
+          rgba(50, 47, 46, 0.02) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+      }
+      .travertine-border {
+        border-color: #ddc0be;
+      }
+      .roman-shadow {
+        box-shadow: 0 10px 30px -10px rgba(50, 47, 46, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-marble text-on-surface font-body-md min-h-screen">
+    <!-- SideNavBar -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 border-r travertine-border bg-[#fcfaf7] dark:bg-stone-950 flex flex-col h-screen p-6 gap-8 shadow-[4px_0_12px_rgba(50,47,46,0.05)] z-50"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full border-2 border-[#912F2F] flex items-center justify-center bg-surface-container-lowest"
+          >
+            <span class="material-symbols-outlined text-[#912F2F]"
+              >account_balance</span
+            >
+          </div>
+          <div>
+            <h1
+              class="text-xl font-black uppercase text-[#912F2F] tracking-widest font-headline-sm"
+            >
+              Numero
+            </h1>
+            <p
+              class="text-[10px] uppercase tracking-[0.2em] text-stone-500 font-label-caps"
+            >
+              Legacy &amp; Discipline
+            </p>
+          </div>
+        </div>
+      </div>
+      <nav class="flex flex-col gap-2">
+        <a
+          class="flex items-center gap-4 px-4 py-3 rounded text-[#912F2F] dark:text-red-500 bg-stone-100 dark:bg-stone-900 border-r-4 border-[#912F2F] transition-all ease-in-out duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="calendar_today"
+            >calendar_today</span
+          >
+          <span class="font-serif">Fasti</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 rounded text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all ease-in-out duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="architecture"
+            >architecture</span
+          >
+          <span class="font-serif">Artes</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 rounded text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all ease-in-out duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="query_stats"
+            >query_stats</span
+          >
+          <span class="font-serif">Annales</span>
+        </a>
+        <a
+          class="flex items-center gap-4 px-4 py-3 rounded text-stone-500 dark:text-stone-400 hover:text-[#912F2F] dark:hover:text-red-400 hover:bg-stone-50 dark:hover:bg-stone-900 transition-all ease-in-out duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-serif">Praesetia</span>
+        </a>
+      </nav>
+      <div class="mt-auto">
+        <button
+          class="w-full bg-[#912F2F] text-white py-3 font-serif uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
+        >
+          Incipere
+        </button>
+      </div>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 right-0 left-64 h-16 bg-[#fcfaf7] dark:bg-stone-950 border-b travertine-border flex justify-between items-center px-8 shadow-sm z-40"
+    >
+      <div class="flex items-center gap-4">
+        <h2 class="font-headline-sm text-stone-900">Forum</h2>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="relative">
+          <input
+            class="bg-surface-container-low border-none border-b-2 border-stone-200 focus:ring-0 focus:border-[#912F2F] text-sm py-1 w-64 font-body-md"
+            placeholder="Search Archives..."
+            type="text"
+          />
+          <span
+            class="material-symbols-outlined absolute right-2 top-1 text-stone-400 text-lg"
+            >search</span
+          >
+        </div>
+        <div class="flex gap-4 text-stone-500">
+          <span
+            class="material-symbols-outlined cursor-pointer hover:text-[#912F2F]"
+            data-icon="notifications"
+            >notifications</span
+          >
+          <span
+            class="material-symbols-outlined cursor-pointer hover:text-[#912F2F]"
+            data-icon="history_edu"
+            >history_edu</span
+          >
+        </div>
+        <div
+          class="w-8 h-8 rounded-full bg-stone-200 overflow-hidden border border-stone-300"
+        >
+          <img
+            alt="User Medallion"
+            class="w-full h-full object-cover"
+            data-alt="Close-up portrait of a distinguished man with graying beard and thoughtful expression, classic dramatic lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2hysP8uTcneb-TUFSn19RFTelLoj0guVfuX667oFAY_sENijaSfU9PHPlgzgGuXuMczWFDwuF9FS68mUL1OzinnJpoq943sJsN-P86CFSkVgNH-tGERMnoUiwu1DhcdRBZUEL3exJrsNklq_RK9IpIBAN-qt1xAyr7-L-BkdBzb8Txjrhbx2p6Fh_FJlCGJnl7bs2HnaoAwo5iiH0Yv7i0uDFebLbixeADYb-uF1GU1iibHa6fKgTKRdjFcN-mzOR7TfSzoMKUwzW"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="ml-64 pt-16 p-margin-page max-w-7xl mx-auto">
+      <section class="mt-stack-lg mb-stack-lg">
+        <div class="flex items-end justify-between mb-stack-md">
+          <div>
+            <p
+              class="font-label-caps text-secondary uppercase tracking-[0.2em] mb-2"
+            >
+              The Current Epoch
+            </p>
+            <h3 class="font-headline-lg text-primary">Today's Schedule</h3>
+          </div>
+          <div class="text-right">
+            <p class="font-headline-sm text-stone-700">VI. KAL. SEPT.</p>
+            <p class="font-body-md text-stone-500 italic">
+              27th of August, MMXXIV
+            </p>
+          </div>
+        </div>
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-12 gap-gutter">
+          <!-- Today's Timeline (Asymmetric Pillar) -->
+          <div
+            class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-inset-square travertine-border border roman-shadow"
+          >
+            <div class="flex justify-between items-center mb-stack-md">
+              <h4 class="font-headline-sm flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#912F2F]"
+                  >hourglass_top</span
+                >
+                Temporal Progress
+              </h4>
+              <div
+                class="px-3 py-1 bg-surface-container text-on-surface-variant font-label-caps text-[10px] tracking-widest rounded"
+              >
+                LIVE
+              </div>
+            </div>
+            <div
+              class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-variant"
+            >
+              <!-- Event 1: Active -->
+              <div class="relative pl-10">
+                <div
+                  class="absolute left-0 top-1 w-[24px] h-[24px] rounded-full border-4 border-[#912F2F] bg-white z-10"
+                ></div>
+                <div class="flex justify-between items-start">
+                  <div>
+                    <p class="font-label-caps text-[#912F2F] text-[10px] mb-1">
+                      08:00 — 10:00
+                    </p>
+                    <h5 class="font-headline-sm text-stone-900">
+                      Artes Liberales: Philosophy
+                    </h5>
+                    <p class="font-body-md text-stone-500">
+                      Reading 'Meditations' by Marcus Aurelius
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-[#912F2F]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >auto_awesome</span
+                  >
+                </div>
+              </div>
+              <!-- Event 2 -->
+              <div class="relative pl-10 opacity-60">
+                <div
+                  class="absolute left-0 top-1 w-[24px] h-[24px] rounded-full border-4 border-surface-variant bg-white z-10"
+                ></div>
+                <div>
+                  <p class="font-label-caps text-stone-400 text-[10px] mb-1">
+                    11:30 — 13:00
+                  </p>
+                  <h5 class="font-headline-sm text-stone-900">
+                    Corpus Disciplina
+                  </h5>
+                  <p class="font-body-md text-stone-500">
+                    Weightlifting &amp; Stoic endurance training
+                  </p>
+                </div>
+              </div>
+              <!-- Event 3 -->
+              <div class="relative pl-10 opacity-60">
+                <div
+                  class="absolute left-0 top-1 w-[24px] h-[24px] rounded-full border-4 border-surface-variant bg-white z-10"
+                ></div>
+                <div>
+                  <p class="font-label-caps text-stone-400 text-[10px] mb-1">
+                    15:00 — 17:00
+                  </p>
+                  <h5 class="font-headline-sm text-stone-900">Lingua Latina</h5>
+                  <p class="font-body-md text-stone-500">
+                    Advanced grammar and translation exercises
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Time Allocation Chart (Mini Bento Block) -->
+          <div
+            class="col-span-12 lg:col-span-4 bg-[#fcfaf7] p-inset-square border travertine-border roman-shadow flex flex-col"
+          >
+            <h4 class="font-headline-sm mb-stack-md text-center">Allocation</h4>
+            <div
+              class="relative h-48 w-48 mx-auto flex items-center justify-center"
+            >
+              <!-- Custom CSS SVG Ring -->
+              <svg class="transform -rotate-90 w-full h-full">
+                <circle
+                  cx="96"
+                  cy="96"
+                  fill="transparent"
+                  r="80"
+                  stroke="#efeded"
+                  stroke-width="12"
+                ></circle>
+                <circle
+                  cx="96"
+                  cy="96"
+                  fill="transparent"
+                  r="80"
+                  stroke="#912F2F"
+                  stroke-dasharray="502"
+                  stroke-dashoffset="150"
+                  stroke-width="12"
+                ></circle>
+                <circle
+                  cx="96"
+                  cy="96"
+                  fill="transparent"
+                  r="80"
+                  stroke="#e9c176"
+                  stroke-dasharray="502"
+                  stroke-dashoffset="400"
+                  stroke-width="12"
+                ></circle>
+              </svg>
+              <div class="absolute text-center">
+                <span class="block font-headline-md text-[#912F2F]">72%</span>
+                <span class="block font-label-caps text-stone-400 text-[10px]"
+                  >OPTIMIZED</span
+                >
+              </div>
+            </div>
+            <div class="mt-auto space-y-2">
+              <div class="flex justify-between items-center text-xs">
+                <span class="flex items-center gap-2"
+                  ><span class="w-2 h-2 rounded-full bg-[#912F2F]"></span>
+                  Disciplines</span
+                >
+                <span class="font-bold">14.5h</span>
+              </div>
+              <div class="flex justify-between items-center text-xs">
+                <span class="flex items-center gap-2"
+                  ><span class="w-2 h-2 rounded-full bg-[#e9c176]"></span>
+                  Reflection</span
+                >
+                <span class="font-bold">4.2h</span>
+              </div>
+              <div class="flex justify-between items-center text-xs opacity-50">
+                <span class="flex items-center gap-2"
+                  ><span class="w-2 h-2 rounded-full bg-stone-300"></span>
+                  Unrest</span
+                >
+                <span class="font-bold">5.3h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Priority Hobbies Section -->
+      <section class="mb-stack-lg">
+        <div class="flex items-center justify-between mb-stack-md">
+          <h3
+            class="font-headline-md border-b-4 border-[#912F2F] pb-2 inline-block"
+          >
+            Priority Artes
+          </h3>
+          <a
+            class="font-label-caps text-secondary hover:text-[#912F2F] transition-colors"
+            href="#"
+            >VIEW ALL ARCHIVES →</a
+          >
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Hobby Card 1 -->
+          <div
+            class="bg-surface-container-lowest border-t-4 border-[#912F2F] border-x border-b travertine-border p-inset-square roman-shadow group hover:-translate-y-1 transition-transform"
+          >
+            <div class="h-32 mb-4 overflow-hidden">
+              <img
+                alt="Calligraphy"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="A collection of antique calligraphy pens and weathered parchment paper on a dark oak desk with soft morning light"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuPAYE9MXIkUindEpl48DzECYggU2k9qZbeQ9i-eLeZYpMasF0WVYxulJwZdJ7FszKu5LhRxR0n0x-1skA8Q_OcVqKlOLJxyIkrFLlevcCfq8u6DkE3J3Tr3WKbefTAT4NVld7gMgqR0CIBUmXmHUT5t0CrUkx80N1qJE3DYkBHpRvjRkqvysHy4RD0JTFsMG-2ZYoJ71K0fTRXVMui83ErV9UfxA-SIOZSENFXfiVHEHc5jN32pX547Ko_FoIhbbwDtmncEv4V4wy"
+              />
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-headline-sm">Calligraphy</h4>
+              <div class="flex gap-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-stone-200"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+            </div>
+            <p class="font-body-md text-stone-600 mb-6">
+              Refining the Uncial script and copperplate mastery.
+            </p>
+            <div class="space-y-1">
+              <div
+                class="flex justify-between text-[10px] font-label-caps text-stone-400"
+              >
+                <span>MASTER LEVELS</span>
+                <span>64%</span>
+              </div>
+              <div class="h-1 bg-surface-container-high relative">
+                <div
+                  class="absolute left-0 top-0 h-full bg-[#912F2F]"
+                  style="width: 64%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Hobby Card 2 -->
+          <div
+            class="bg-surface-container-lowest border-t-4 border-[#e9c176] border-x border-b travertine-border p-inset-square roman-shadow group hover:-translate-y-1 transition-transform"
+          >
+            <div class="h-32 mb-4 overflow-hidden">
+              <img
+                alt="Physique"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Close up of a heavy bronze weight plate on a textured gym floor with dramatic highlights and deep shadows"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6cJMtMVjzcqOjT2yJYiBxAp48RosY3N62NYczbfoeFPK1-6k-SsfMxUsATrRH16zmsxj_SnetbOqcRX9LHReVccGkTJqWZAn6mchiLxfQmZzIeF6O48G44b4AJCQl_xjCbcdo9QoROaAa4OqqYd8e7A_4wUhKyeTzR-sCyOVvqlgCyoWap9H_CP7yUqGLrrHitjJBZfonk3NGFPrHqf0qlHN_Mb7xi0BXQ_jc4Kr0sBSLjeQdfGhzODnBzszHdIefdaM6cWsm-YfZ"
+              />
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-headline-sm">Physique</h4>
+              <div class="flex gap-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+            </div>
+            <p class="font-body-md text-stone-600 mb-6">
+              Building the foundation of the Spartan ideal.
+            </p>
+            <div class="space-y-1">
+              <div
+                class="flex justify-between text-[10px] font-label-caps text-stone-400"
+              >
+                <span>STRENGTH QUOTA</span>
+                <span>88%</span>
+              </div>
+              <div class="h-1 bg-surface-container-high relative">
+                <div
+                  class="absolute left-0 top-0 h-full bg-[#e9c176]"
+                  style="width: 88%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Hobby Card 3 -->
+          <div
+            class="bg-surface-container-lowest border-t-4 border-stone-800 border-x border-b travertine-border p-inset-square roman-shadow group hover:-translate-y-1 transition-transform"
+          >
+            <div class="h-32 mb-4 overflow-hidden">
+              <img
+                alt="Philosophy"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="Vast library with floor-to-ceiling wooden bookshelves and a rolling ladder in soft warm library lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWqxXqX9EvG4fNha_Xr5GD282SBgJQwhZC4mJVFEfjrwWp_Qmm09aUrODFuGQ3G9aqPVMrH_23c8lt6rIIHQpn99_vkIxQoN2vleWrSM3Fs-w9WMVKpCsm0nSz3LyjrHcvzGRqgJKcIH1QOaYoCVQVVNuxpoZJfUXIMZZVMpljkRA1Bwu4BkJbfM-b1rLskQ6hDH62_3efu_11eZruM7Y5nJ41GCVUXGOAVu-D2zoS76TdcQCwNSyaGbBrbdlSvDBruKjhGsb1Smam"
+              />
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-headline-sm">Philosophy</h4>
+              <div class="flex gap-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-[#e9c176]"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-stone-200"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined text-[16px] text-stone-200"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+            </div>
+            <p class="font-body-md text-stone-600 mb-6">
+              Understanding the logos through ancient texts.
+            </p>
+            <div class="space-y-1">
+              <div
+                class="flex justify-between text-[10px] font-label-caps text-stone-400"
+              >
+                <span>WISDOM ACCRUAL</span>
+                <span>21%</span>
+              </div>
+              <div class="h-1 bg-surface-container-high relative">
+                <div
+                  class="absolute left-0 top-0 h-full bg-stone-800"
+                  style="width: 21%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Discipline Streak Section (The Pillar Metaphor) -->
+      <section
+        class="bg-surface-container p-inset-square travertine-border border mb-stack-lg flex flex-col md:flex-row gap-gutter items-center"
+      >
+        <div class="md:w-1/4 text-center md:text-left">
+          <h4 class="font-headline-sm text-primary">The Eternal Streak</h4>
+          <p class="font-body-md text-stone-500">
+            412 Consecutive Days of Devotion
+          </p>
+        </div>
+        <div class="flex-grow flex gap-2 justify-center h-24 items-end">
+          <!-- Pillars -->
+          <div
+            class="w-6 bg-surface-variant rounded-t-sm h-[40%]"
+            title="Monday"
+          ></div>
+          <div
+            class="w-6 bg-surface-variant rounded-t-sm h-[65%]"
+            title="Tuesday"
+          ></div>
+          <div
+            class="w-6 bg-[#912F2F] rounded-t-sm h-[85%]"
+            title="Wednesday"
+          ></div>
+          <div
+            class="w-6 bg-[#912F2F] rounded-t-sm h-[90%]"
+            title="Thursday"
+          ></div>
+          <div
+            class="w-6 bg-[#912F2F] rounded-t-sm h-[75%]"
+            title="Friday"
+          ></div>
+          <div
+            class="w-6 bg-[#e9c176] rounded-t-sm h-[100%] border-x-2 border-t-2 border-[#912F2F]"
+            title="Today (Record)"
+          ></div>
+          <div
+            class="w-6 bg-stone-200 rounded-t-sm h-[10%] opacity-30"
+            title="Tomorrow"
+          ></div>
+        </div>
+        <div class="md:w-1/4 flex flex-col items-center justify-center">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e9c176] p-1">
+            <div
+              class="w-full h-full rounded-full bg-[#e9c176] flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-white"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >workspace_premium</span
+              >
+            </div>
+          </div>
+          <p
+            class="font-label-caps text-[10px] mt-2 tracking-widest text-on-surface-variant"
+          >
+            GOLD TIER STATUS
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- Contextual FAB -->
+    <button
+      class="fixed bottom-10 right-10 w-16 h-16 bg-[#912F2F] text-white rounded-full shadow-xl flex items-center justify-center group hover:scale-110 transition-transform z-50"
+    >
+      <span
+        class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform"
+        >add</span
+      >
+    </button>
+  </body>
+</html>
